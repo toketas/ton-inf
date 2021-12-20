@@ -41,4 +41,7 @@ inputs = {
       description = "Allow only HTTPS"
     },
   ]
+
+  user_data = "sudo apt update && sudo apt install -y docker.io && sudo docker
+  run -d -p 443 toketas/simple-nginx"
 }
