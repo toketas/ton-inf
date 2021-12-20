@@ -1,6 +1,6 @@
 locals {
   account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl"))
-  environment  = local.accounts_vars.locals.environment
+  environment  = local.account_vars.locals.environment
 }
 
 terraform {
@@ -19,7 +19,7 @@ dependency "vpc" {
 
 inputs = {
   instance_type               = "t2.micro"
-  vpc_id                      = ${dependency.vpc.outputs.vpc_id}
+  vpc_id                      = "${dependency.vpc.outputs.vpc_id}"
   associate_public_ip_address = true
   name                        = "${locals.environment}-simple-nginx"
   namespace                   = "${locals.environment}-simple-nginx"
