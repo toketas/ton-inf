@@ -1,9 +1,8 @@
 ## Pre-requisitos
 
-- terragrunt
-    é a ferramenta para terraformar nossa infra
+- terragrunt -> é a ferramenta para terraformar nossa infra
     https://github.com/gruntwork-io/terragrunt/releases -> download
-- credenciais AWS
+- credenciais AWS -> criar profile e preencher https://github.com/toketas/ton-inf/blob/c2389e4e3edc4eeea2c4f3c9205a6c77b0bbbfbc/infra/terragrunt.hcl#L22
 - criar banco dynamoDB com uma tabela chamada `ton-terraform-lock`
 - criar a seguinte role com a seguinte policy:
   - policy: TerraformRemoteStatePolicy
@@ -75,7 +74,7 @@
             ]
         }
   - role: TerraformRemoteState
-  - preencher a `role_arn` na linha 40 do terragrunt.hcl raíz com o IAM role gerado.
+  - preencher a `role_arn` na [linha 40](https://github.com/toketas/ton-inf/blob/c2389e4e3edc4eeea2c4f3c9205a6c77b0bbbfbc/infra/terragrunt.hcl#L40) do terragrunt.hcl raíz com o IAM role gerado.
 
 ## Comandos
 
