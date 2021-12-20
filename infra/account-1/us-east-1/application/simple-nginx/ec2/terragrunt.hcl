@@ -18,6 +18,7 @@ dependency "vpc" {
 }
 
 inputs = {
+  instance_type               = "t2.micro"
   vpc_id                      = ${dependency.vpc.outputs.vpc_id}
   associate_public_ip_address = true
   name                        = "${locals.environment}-simple-nginx"
